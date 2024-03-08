@@ -136,7 +136,7 @@ def healthcalc(class_dnd, abilitymod_list):
         while user_input == "y":
             health = random.randint(1, 10)
             health += abilitymod_list[5]
-            print(f"Your Paladin's health is {health}")
+            print(f"Your Fighter's health is {health}")
             user_input = input("Rolling 1d10... Would you like to roll again? ").lower()
 
 
@@ -510,8 +510,19 @@ def weaponselection(class_dnd):
                 return None
 
         userinput = input("Please choose between (a) a light crossbow and 20 bolts or (b) two handaxes").lower()
+        print("Name\t\tCost\t\tDamage\t\tWeight\t\tProperties")
+        print("--------------------------------------------------------------")
         print(f"{library_dnd.simpweapons_ranged[0]}")
         print(f"{library_dnd.simpweapons_melee[3]}")
+        
+        if userinput == "a":
+            
+            weapon_list.append(f"{library_dnd.simpweapons_ranged[0]}")
+        
+        elif userinput == "b":
+            
+            weapon_list.append(f"{library_dnd.simpweapons_melee[3]}")
+            weapon_list.append(f"{library_dnd.simpweapons_melee[3]}")
 
         
     
